@@ -1,7 +1,7 @@
 # Django settings for mldata project.
 
 import os
-from django.conf import global_settings 
+from django.conf import global_settings
 
 FILE_UPLOAD_HANDLERS = ('mldata.utils.uploadprogresscachedhandler.UploadProgressCachedHandler', ) + \
         global_settings.FILE_UPLOAD_HANDLERS
@@ -74,7 +74,7 @@ if PRODUCTION:
 else:
     MEDIA_ROOT = os.path.join(ABSDIR, 'media/private')
     CACHE_ROOT = os.path.join(ABSDIR, 'media/private/cache')
-    
+
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
@@ -135,7 +135,7 @@ else:
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.auth',
-    'mldata.django_authopenid.context_processors.authopenid',
+    'django_authopenid.context_processors.authopenid',
 )
 
 INSTALLED_APPS = (
@@ -155,7 +155,7 @@ INSTALLED_APPS = (
     'mldata.user',
     'mldata.repository',
     'mldata.tagging',
-    'mldata.django_authopenid',
+    'django_authopenid',
     'mldata.preferences',
     'mldata.captcha',
     'mldata.datacite',
